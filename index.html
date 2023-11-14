@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Tabla</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Proyecto de tabla con HTML, CSS y JavaScript</h1>
+
+    <main>
+      <table>
+        <tr>
+          <th>Producto</th>
+          <th>Precio por unidad</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+        </tr>
+
+        <tr>
+          <td class="altura">
+            <select name="productos" id="selectProducts">
+              <option value="manzana">manzana</option>
+              <option value="banana">banana</option>
+              <option value="yogur">yogur</option>
+              <option value="pan">pan</option>
+            </select>
+          </td>
+
+          <td class="altura" id="precioPorUnidad"></td>
+
+          <td class="altura">
+            <input type="number" id="cantidad" placeholder="cantidad" min="1"
+              max="100">
+          </td>
+
+          <td class="altura" id="total"></td>
+
+        </tr>
+      </table>
+    </main>
+
+    <!-- SCRIPT JS -->
+    <script src="index.js"></script>
+  </body>
+
+</html>
