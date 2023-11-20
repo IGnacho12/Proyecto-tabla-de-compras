@@ -1,61 +1,86 @@
-/* Fuente "roboto" */
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,600;1,400&display=swap");
 
-/* --- --- --- --- Estilos generales --- --- --- --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: none;
+  outline: none; */
+}
+
+:root {
+  --primary-color: #4190df;
+  --secundary-color: rgba(65, 144, 223, 0.4);
 }
 
 body {
-  font-family: "Source Code Pro", "sans serif";
-  font-size: 35px;
-  background-color: var(--primary-color);
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: 900;
 }
 
-/* --- --- --- --- Estilos del Main --- --- --- --- */
-h1 {
-  font-size: 35px;
-  margin-bottom: 30px;
-  text-align: center;
-  margin-top: 100px;
+/* --- --- --- --- Estilos generales de la tabla --- --- --- --- */
+table {
+  border-collapse: collapse;
 }
 
-main {
+.table-container {
+  border: solid 5px var(--primary-color);
+  border-radius: 10px;
+}
+ 
+
+/* --- --- --- --- Estilos del container --- --- --- --- */
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  font-size: 2rem;
+  font-size: 40px;
 }
 
-/* --- --- --- --- Estilos de la tabla --- --- --- --- */
-table {
-  display: flex;
-  align-self: center;
-  border-spacing: 0;
-  border: solid 4px rgb(65, 144, 223);
-  border-radius: 10px;
+.container h1 {
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+/* --- --- --- --- Estilos de los th y td --- --- --- --- */
+th,
+td {
+  border: 3px solid var(--primary-color);
+  border-collapse: collapse;
 }
 
 th {
-  background-color: rgba(65, 144, 223, 0.4);
-  padding: 12px;
-  border: solid 1px rgb(65, 144, 223);
+  background-color: var(--secundary-color);
+  padding: 10px 10px;
 }
 
-th,
-td {
-  border: solid 1px rgb(65, 144, 223);
+/* td input */
+.td-input input {
+  background-color: rgb(65, 144, 223);
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 
-
-.altura {
-  height: 100px;
-  text-align: center; /* Centra horizontalmente */
-  vertical-align: middle; /* Centra verticalmente */
+.td-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
 }
 
-/* --- --- --- --- Estilos de del selector --- --- --- --- */
-#selectProducts,  #cantidad {
+/* td productos */
+.td-productos select {
   background-color: rgb(65, 144, 223);
   color: white;
   padding: 10px;
@@ -65,16 +90,10 @@ td {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
-  transition: .3s;
+  transition: 0.3s;
 }
 
-#selectProducts:hover,  #cantidad:active {
- transform: scale(0.9);
- background-color: red;
-}
-
-#cantidad::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 19px;
-  font-style: italic;
+.td-productos select:hover, .td-input input:hover{
+  box-shadow: 0 0 20px rgba(65, 144, 223, 0.9);
+  scale: .99;
 }

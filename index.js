@@ -1,52 +1,50 @@
-const SELECTOR = document.getElementById("selectProducts");
-const PRECIO_POR_UNIDAD = document.getElementById("precioPorUnidad");
-const CANTIDAD = document.getElementById("cantidad");
-const TOTAL = document.getElementById("total");
+const $ = selector => document.querySelector(selector)
+const PRODUCTOS = $('.productos')
+const CANTIDAD = $('.td-input-cantidad')
+const TOTAL = $('.total')
 
-let cantidad = 0;
-let VALOR_DEL_SELECTOR = "manzana"; // Se pone este valor para usarlo por defecto
+let precioPorUnidad = 0
+let valorDelSelector = 'manzana'
 
-// Cuando cambie el input de la cantidad de productos
-CANTIDAD.addEventListener("input", () => {
-  cantidad = parseInt(CANTIDAD.value);
-  console.log(cantidad);
-  console.log(VALOR_DEL_SELECTOR);
-  sacarTotal();
-});
+PRODUCTOS.addEventListener('change', () => {
+  TODO()
+})
 
-// Cuando cambie el producto
-SELECTOR.addEventListener("change", () => {
-  sacarTotal();
-});
+CANTIDAD.addEventListener('change', () => {
+  TODO()
+})
 
-function sacarTotal() {
-  let VALOR_DEL_SELECTOR = document.getElementById("selectProducts").value;
-
-  console.log(VALOR_DEL_SELECTOR);
-
-  let precioPorUnidad = 0;
-
-  switch (VALOR_DEL_SELECTOR) {
-    case "manzana":
-      precioPorUnidad = 100;
-      break;
-    case "banana":
-      precioPorUnidad = 40;
-      break;
-    case "yogur":
-      precioPorUnidad = 200;
-      break;
-    case "pan":
-      precioPorUnidad = 350;
-      break;
+function conseguirPrecioPorUnidad () {
+  switch (valorDelSelector) {
+    case 'manzana':
+      precioPorUnidad = 100
+      break
+    case 'banana':
+      precioPorUnidad = 40
+      break
+    case 'yogur':
+      precioPorUnidad = 200
+      break
+    case 'pan':
+      precioPorUnidad = 350
+      break
     default:
-      precioPorUnidad = 100;
+      precioPorUnidad = 100
       break
   }
+}
 
-  
+function TODO () {
+  // --- --- Acceder al producto seleccionado --- ---
+  valorDelSelector = PRODUCTOS.value
+  // --- --- Acceder al precio del producto --- ---
+  conseguirPrecioPorUnidad()
+  // --- --- Accerder a la cantidad --- ---
+  const cantidad = $('.td-input-cantidad').value
 
-  PRECIO_POR_UNIDAD.innerHTML = "$" + precioPorUnidad.toString();
-  const precioTotal = precioPorUnidad * cantidad;
-  TOTAL.innerHTML = "$" + precioTotal.toString();
+  const total = cantidad * precioPorUnidad
+  // Cambiar el precio por unidad HTMl
+  const PRECIO_POR_UNIDAD = $('.td-precio-por-unidad')
+  PRECIO_POR_UNIDAD.innerHTML = '$' + precioPorUnidad
+  TOTAL.innerHTML = '$' + total
 }
