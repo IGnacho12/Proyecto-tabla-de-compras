@@ -48,3 +48,34 @@ function TODO () {
   PRECIO_POR_UNIDAD.innerHTML = '$' + precioPorUnidad
   TOTAL.innerHTML = '$' + total
 }
+
+const BTN_MORE = $('.btn-more')
+const TDBODY = $('.tdbody')
+let i = 0
+BTN_MORE.addEventListener('click', () => {
+  // Utiliza la función insertAdjacentHTML correctamente
+  i += 1
+  console.log(i)
+  TDBODY.insertAdjacentHTML('beforeend', `
+    <tr>
+      <td class="td-productos">
+        <select name="productos" class="productos">
+          <option value="manzana">Manzana</option>
+          <option value="banana">Banana</option>
+          <option value="yogur">Yogur</option>
+          <option value="pan">Pan</option>
+        </select>
+      </td>
+
+      <td class="td-precio-por-unidad">$100</td>
+
+      <td class="td-input">
+        <input type="number" class="td-input-cantidad" placeholder="Cantidad">
+      </td>
+
+      <td class="td-total">
+        <p class="total">$0</p>
+      </td>
+    </tr>
+  `)
+})

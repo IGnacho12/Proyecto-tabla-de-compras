@@ -26,8 +26,8 @@ table {
 .table-container {
   border: solid 5px var(--primary-color);
   border-radius: 10px;
+  margin-bottom: 100px;
 }
- 
 
 /* --- --- --- --- Estilos del container --- --- --- --- */
 .container {
@@ -36,7 +36,7 @@ table {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 50vh;
+  height: 90vh;
   font-size: 2rem;
   font-size: 40px;
 }
@@ -93,7 +93,32 @@ th {
   transition: 0.3s;
 }
 
-.td-productos select:hover, .td-input input:hover{
+.td-productos select:hover,
+.td-input input:hover {
   box-shadow: 0 0 20px rgba(65, 144, 223, 0.9);
-  scale: .99;
+  scale: 0.99;
+}
+
+
+.btn-more {
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  animation: btn 2s infinite alternate ;
+}
+
+.btn-more img {
+  width: 50px;
+}
+
+@keyframes btn {
+  from {
+    scale: 1.1;
+  }
+
+  to {
+    scale: .9;
+  }
 }
